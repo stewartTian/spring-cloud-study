@@ -16,7 +16,7 @@ public class OrderController {
     private RestTemplate restTemplate;
 
     @PostMapping("/payment/save")
-    public CommonResult<Payment> savePayment(Payment payment) {
+    public CommonResult<Payment> savePayment(@RequestBody Payment payment) {
         return restTemplate.postForObject(PAYMENT_URL + "/payment/save", payment, CommonResult.class);
     }
 

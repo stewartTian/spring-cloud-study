@@ -20,7 +20,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/save")
-    public CommonResult<Object> savePayment(Payment payment) {
+    public CommonResult<Object> savePayment(@RequestBody Payment payment) {
         int save = paymentService.save(payment);
         if (save > 0) {
             return new CommonResult<>(200, "插入成功");
