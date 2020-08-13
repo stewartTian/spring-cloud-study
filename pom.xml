@@ -13,6 +13,7 @@
         <module>cloud-provider-payment-8001</module>
         <module>cloud-base-parent</module>
         <module>cloud-consumer-order-80</module>
+        <module>cloud-eureka-server-7001</module>
 
     </modules>
 
