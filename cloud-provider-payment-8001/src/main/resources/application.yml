@@ -11,8 +11,19 @@ spring:
     username: cloud
     password: cloud1234
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.stewart.cloud.entities.po
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    web: DEBUG
