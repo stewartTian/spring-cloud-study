@@ -15,6 +15,7 @@
         <module>cloud-consumer-order-80</module>
         <module>cloud-eureka-server-7001</module>
         <module>cloud-eureka-server-7002</module>
+        <module>cloud-provider-payment-8002</module>
 
     </modules>
 
