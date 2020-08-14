@@ -1,9 +1,9 @@
 server:
-  port: 7001
+  port: 7002
 
 eureka:
   instance:
-    hostname: eureka7001.com #需要更改hosts文件
+    name: eureka7002.com
   client:
     register-with-eureka: false
     fetch-registry: false
@@ -11,4 +11,4 @@ eureka:
       # 单注册中心时指向自己
       # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
       # 集群时指向其它注册中心
-      defaultZone: http://eureka7002.com:7002/eureka
+      defaultZone: http://eureka7001.com:7001/eureka
