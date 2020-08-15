@@ -9,6 +9,9 @@ eureka:
     fetch-registry: false
     service-url:
       # 单注册中心时指向自己
-      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
       # 集群时指向其它注册中心
-      defaultZone: http://eureka7002.com:7002/eureka
+      # defaultZone: http://eureka7002.com:7002/eureka
+  server:
+    enable-self-preservation: false # 关闭自我保护
+    eviction-interval-timer-in-ms: 2000
