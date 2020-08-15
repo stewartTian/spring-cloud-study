@@ -1,4 +1,4 @@
-package com.stewart.order.config;
+package com.stewart.zookeeper.order.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
