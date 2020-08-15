@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: zookpeer-provider-payment
+    name: zookeeper-provider-payment
   cloud:
     zookeeper:
       connect-string: localhost:2181

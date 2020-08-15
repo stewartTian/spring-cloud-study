@@ -1,4 +1,4 @@
-package com.stewart.zookeeper.order.web;
+package com.stewart.consul.order.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,16 +10,16 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/order")
 public class OrderController {
 
-    //    private final String ZOOKEEPER_PAYMENT_URL = "http://localhost:8004";
+//    private final String CONSUL_PAYMENT_URL = "http://localhost:8006";
 
-    private final String ZOOKEEPER_PAYMENT_URL = "http://zookeeper-provider-payment";
+    private final String CONSUL_PAYMENT_URL = "http://consul-provider-payment";
 
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/payment/zookeeper")
-    public String payment() {
-        return restTemplate.getForObject(ZOOKEEPER_PAYMENT_URL + "/payment/zookeeper", String.class);
+    @GetMapping("/payment/consul")
+    private String payment() {
+        return restTemplate.getForObject(CONSUL_PAYMENT_URL + "/payment/consul", String.class);
     }
 
 }
