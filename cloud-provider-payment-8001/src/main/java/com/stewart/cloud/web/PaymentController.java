@@ -6,7 +6,11 @@ import com.stewart.web.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author stewart
@@ -22,6 +26,9 @@ public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @PostMapping("/save")
     public CommonResult<Object> savePayment(@RequestBody Payment payment) {
@@ -42,6 +49,19 @@ public class PaymentController {
         } else {
             return new CommonResult<>(400, "查询失败");
         }
+    }
+
+    @GetMapping("/discovery")
+    public Object discovery() {
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            log.info("service : {}", service);
+            List<ServiceInstance> instances = discoveryClient.getInstances(service);
+            for (ServiceInstance instance : instances) {
+                log.info("instance : {}, host : {}, port : {} , url : {}", instance.getInstanceId(), instance.getHost(), instance.getPort(), instance.getUri());
+            }
+        }
+        return this.discoveryClient;
     }
 
 }
