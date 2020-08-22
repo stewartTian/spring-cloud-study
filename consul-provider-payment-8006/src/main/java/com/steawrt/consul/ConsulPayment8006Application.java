@@ -9,7 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class ConsulPayment8006Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConsulPayment8006Application.class,args);
+        SpringApplication.run(ConsulPayment8006Application.class, args);
     }
 
 }

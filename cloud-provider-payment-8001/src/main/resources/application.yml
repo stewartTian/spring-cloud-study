@@ -20,9 +20,9 @@ eureka:
       # defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
     instance-id: payment8001
-    prefer-ip-address: true
-    lease-renewal-interval-in-seconds: 9 # 心跳时间间隔 设置成当前数据是为了验证超过时间注册中心的服务列表
-    lease-expiration-duration-in-seconds: 3 # 距离上一次心跳时间上限
+    prefer-ip-address: true # 注册实例携带ip信息
+    # lease-renewal-interval-in-seconds: 9 # 心跳时间间隔 设置成当前数据是为了验证超过时间注册中心的服务列表
+    # lease-expiration-duration-in-seconds: 3 # 距离上一次心跳时间上限
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
