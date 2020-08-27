@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/consul/payment")
 public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
 
-    @GetMapping("/consul")
+    @GetMapping("/port")
     public String payment() {
         return "spring cloud with consul: " + serverPort + "\t   " + UUID.randomUUID().toString();
     }

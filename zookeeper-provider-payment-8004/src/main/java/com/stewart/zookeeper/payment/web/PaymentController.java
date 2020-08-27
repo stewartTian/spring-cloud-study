@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/zookeeper/payment")
 public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
 
-    @GetMapping("/zookeeper")
+    @GetMapping("/port")
     public String paymentZookeeper() {
         return "springCloud with zookeeper: " + serverPort + "\t" + UUID.randomUUID().toString();
     }

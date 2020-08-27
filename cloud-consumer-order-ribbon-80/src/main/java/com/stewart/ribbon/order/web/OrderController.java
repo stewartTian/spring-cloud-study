@@ -14,7 +14,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/ribbon/order")
 public class OrderController {
 
     private final String PAYMENT_URL = "http://cloud-provider-payment";

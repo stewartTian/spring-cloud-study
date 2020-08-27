@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/zookeeper/order")
 public class OrderController {
 
     //    private final String ZOOKEEPER_PAYMENT_URL = "http://localhost:8004";
@@ -17,9 +17,9 @@ public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/payment/zookeeper")
+    @GetMapping("/payment/port")
     public String payment() {
-        return restTemplate.getForObject(ZOOKEEPER_PAYMENT_URL + "/payment/zookeeper", String.class);
+        return restTemplate.getForObject(ZOOKEEPER_PAYMENT_URL + "/zookeeper/payment/port", String.class);
     }
 
 }

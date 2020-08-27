@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/consul/order")
 public class OrderController {
 
 //    private final String CONSUL_PAYMENT_URL = "http://localhost:8006";
@@ -17,9 +17,9 @@ public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/payment/consul")
+    @GetMapping("/payment/port")
     private String payment() {
-        return restTemplate.getForObject(CONSUL_PAYMENT_URL + "/payment/consul", String.class);
+        return restTemplate.getForObject(CONSUL_PAYMENT_URL + "/consul/payment/port", String.class);
     }
 
 }
