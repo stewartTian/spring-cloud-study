@@ -17,8 +17,13 @@ public class OrderController {
     private PaymentAPI paymentAPI;
 
     @GetMapping("/get/{id}")
-    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
+    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
         return paymentAPI.getPaymentById(id);
+    }
+
+    @GetMapping("/timeout")
+    public String paymentFeignTimeout() {
+        return paymentAPI.paymentFeignTimeout();
     }
 
 }
