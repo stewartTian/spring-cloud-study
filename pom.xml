@@ -22,6 +22,8 @@
         <module>consul-consumer-order-80</module>
         <module>cloud-consumer-order-ribbon-80</module>
         <module>cloud-consumer-order-feign-80</module>
+        <module>cloud-consumer-order-hystrix-80</module>
+        <module>cloud-provider-payment-hystrix-8001</module>
     </modules>
 
     <properties>
