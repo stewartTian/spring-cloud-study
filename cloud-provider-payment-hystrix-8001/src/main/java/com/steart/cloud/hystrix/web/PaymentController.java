@@ -31,4 +31,11 @@ public class PaymentController {
         return result;
     }
 
+    @GetMapping("/error/{id}")
+    public String paymentError(@PathVariable("id") Long id) {
+        String result = paymentService.paymentError(id);
+        log.info("result:{}", result);
+        return result;
+    }
+
 }

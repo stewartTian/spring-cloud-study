@@ -6,4 +6,6 @@ public interface PaymentService {
 
     String paymentInfoTimeout(Long id);
 
+    String paymentError(Long id);
+
 }
