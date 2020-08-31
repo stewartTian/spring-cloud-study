@@ -19,3 +19,7 @@ ribbon:
   #指的是建立连接后从服务器读取到可用资源所用的时间
   ConnectTimeout: 5000
 
+feign:
+  hystrix:
+    enabled: true
+

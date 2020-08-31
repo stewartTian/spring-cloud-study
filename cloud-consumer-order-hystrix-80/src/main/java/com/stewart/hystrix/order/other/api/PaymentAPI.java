@@ -1,20 +1,22 @@
 package com.stewart.hystrix.order.other.api;
 
+import com.stewart.hystrix.order.other.api.impl.PaymentAPIFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 使用feign做服务降级时，不要在类上使用@RequestMapping注解
+ */
 @Component
-@RequestMapping("/hystrix/payment")
-@FeignClient("CLOUD-PROVIDER-PAYMENT-HYSTRIX")
+@FeignClient(value = "CLOUD-PROVIDER-PAYMENT-HYSTRIX",fallback = PaymentAPIFallback.class)
 public interface PaymentAPI {
 
-    @GetMapping("/ok/{id}")
+    @GetMapping("/hystrix/payment/ok/{id}")
     String paymentInfoOK(@PathVariable("id") Long id);
 
-    @GetMapping("/timeout/{id}")
+    @GetMapping("/hystrix/payment/timeout/{id}")
     String paymentInfoTimeout(@PathVariable("id") Long id);
 
 }
