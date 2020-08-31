@@ -21,5 +21,6 @@ ribbon:
 
 feign:
   hystrix:
+    # 默认值为false，调用其它服务时，其它服务宕机时，要时用服务降级，需开启此配置
     enabled: true
 
