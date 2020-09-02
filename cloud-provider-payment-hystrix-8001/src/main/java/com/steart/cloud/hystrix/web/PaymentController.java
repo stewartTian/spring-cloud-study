@@ -23,7 +23,6 @@ public class PaymentController {
         return result;
     }
 
-
     @GetMapping("/timeout/{id}")
     public String paymentInfoTimeOut(@PathVariable("id") Long id) {
         String result = paymentService.paymentInfoTimeout(id);
@@ -36,6 +35,13 @@ public class PaymentController {
         String result = paymentService.paymentError(id);
         log.info("result:{}", result);
         return result;
+    }
+
+    @GetMapping("/breaker/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String breaker = paymentService.paymentCircuitBreaker(id);
+        log.info("result:{}", breaker);
+        return breaker;
     }
 
 }
