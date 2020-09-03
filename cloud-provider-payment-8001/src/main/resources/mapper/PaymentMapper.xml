@@ -4,8 +4,8 @@
 <mapper namespace="com.stewart.cloud.mapper.PaymentMapper">
 
     <resultMap id="resultMap" type="com.stewart.web.entities.Payment">
-        <id column="id" property="id" jdbcType="BIGINT"></id>
-        <result column="serial" property="serial" jdbcType="VARCHAR"></result>
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="serial" property="serial" jdbcType="VARCHAR"/>
     </resultMap>
 
     <insert id="save" parameterType="com.stewart.web.entities.Payment" useGeneratedKeys="true" keyProperty="id">
