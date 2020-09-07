@@ -20,7 +20,8 @@ management:
 
 eureka:
   instance:
-    instance-id: cloud-config-client
+    instance-id: config-client-3311
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka

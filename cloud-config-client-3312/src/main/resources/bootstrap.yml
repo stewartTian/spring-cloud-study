@@ -1,0 +1,26 @@
+server:
+  port: 3312
+
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: dev
+      uri: http://localhost:3301
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  instance:
+    instance-id: config-client-3312
+    prefer-ip-address: true # 注册实例携带ip信息
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
