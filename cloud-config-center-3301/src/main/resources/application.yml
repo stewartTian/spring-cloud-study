@@ -1,0 +1,21 @@
+server:
+  port: 3301
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:stewartTian/cloud-config.git
+          search-paths:
+            - cloud-config
+      label: master
+
+eureka:
+  instance:
+    instance-id: cloud-config-center
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
