@@ -15,12 +15,12 @@ public class OrderController {
     private PaymentAPI paymentAPI;
 
     @GetMapping("/ok/{id}")
-    public String paymentInfoOK(@PathVariable("id") Long id){
+    public String paymentInfoOK(@PathVariable("id") Long id) {
         return paymentAPI.paymentInfoOK(id);
     }
 
     @GetMapping("/timeout/{id}")
-    String paymentInfoTimeout(@PathVariable("id") Long id){
+    String paymentInfoTimeout(@PathVariable("id") Long id) {
         return paymentAPI.paymentInfoTimeout(id);
     }
 

@@ -9,6 +9,6 @@ public interface PaymentService {
     String paymentError(Long id);
 
     //*** 服务熔断
-    String paymentCircuitBreaker( Integer id);
+    String paymentCircuitBreaker(Integer id);
 
 }

@@ -29,6 +29,9 @@
         <module>cloud-config-center-3301</module>
         <module>cloud-config-client-3311</module>
         <module>cloud-config-client-3312</module>
+        <module>cloud-stream-rabbit-provider-8011</module>
+        <module>cloud-stream-rabbit-consumer-8021</module>
+        <module>cloud-stream-rabbit-consumer-8022</module>
     </modules>
 
     <properties>
